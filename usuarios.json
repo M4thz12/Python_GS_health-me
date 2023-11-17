@@ -1,5 +1,34 @@
 {
-    "usuarios":[
-        
-    ]
+  "usuarios": [
+    {
+      "nome": "dom",
+      "email": "DOm@",
+      "senha": "S0m"
+    },
+    {
+      "nome": "mz",
+      "email": "mz@",
+      "senha": "mZ!2"
+    },
+    {
+      "nome": "rodrigo",
+      "email": "rodrigo@gmail",
+      "senha": "rd00D"
+    },
+    {
+      "nome": "matheus",
+      "email": "matheus@gmail",
+      "senha": "M4thz"
+    },
+    {
+      "nome": "rodnei",
+      "email": "rod@gmail.com",
+      "senha": "R0d"
+    },
+    {
+      "nome": "a",
+      "email": "a@.com",
+      "senha": "A1"
+    }
+  ]
 }
