@@ -46,7 +46,15 @@ def verifica_usuario(email, senha):
         for i in range(0, len(dados)):
             dados_usuario = lista_usuarios['usuarios'][i]   
             if email == dados_usuario["email"] and senha == dados_usuario["senha"]:
-                print(f'login realizado com sucesso, bem vindo {dados_usuario["nome"]}')
+                nome_do_usuario = dados_usuario["nome"]
+                print(f'login realizado com sucesso, bem vindo {nome_do_usuario}')
                 return False
         
-        return True    
+        return True
+
+def adiciona_dados_usuario(dados_novos):
+            
+    with open("usuario_calculado_da_vez.json", "w") as arquivo:
+        lista_dados_usuarios = {"dados_do_usuario_atual":[]}
+        lista_dados_usuarios["dados_do_usuario_atual"].append(dados_novos)
+        json.dump(lista_dados_usuarios, arquivo, indent=2)

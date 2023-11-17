@@ -1,34 +1,34 @@
 {
   "usuarios": [
     {
-      "nome": "dom",
-      "email": "DOm@",
-      "senha": "S0m"
-    },
-    {
-      "nome": "mz",
-      "email": "mz@",
-      "senha": "mZ!2"
+      "nome": "matheus",
+      "email": "m@.com",
+      "senha": "M1"
     },
     {
       "nome": "rodrigo",
-      "email": "rodrigo@gmail",
-      "senha": "rd00D"
+      "email": "r@.com",
+      "senha": "R1"
     },
     {
-      "nome": "matheus",
-      "email": "matheus@gmail",
-      "senha": "M4thz"
+      "nome": "eric",
+      "email": "eric@.com",
+      "senha": "Eric123"
     },
     {
-      "nome": "rodnei",
-      "email": "rod@gmail.com",
-      "senha": "R0d"
+      "nome": "eric",
+      "email": "e@.com",
+      "senha": "E1"
     },
     {
-      "nome": "a",
-      "email": "a@.com",
-      "senha": "A1"
+      "nome": "eric",
+      "email": "e@.com",
+      "senha": "E1"
+    },
+    {
+      "nome": "pedro",
+      "email": "p@.com",
+      "senha": "P1"
     }
   ]
 }
