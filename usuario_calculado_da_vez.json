@@ -1,10 +1,10 @@
 {
   "dados_do_usuario_atual": [
     {
-      "email": "p@.com",
-      "idade": 19,
-      "peso": 80.0,
-      "altura": 177,
+      "email": "r@.com",
+      "idade": 18,
+      "peso": 100.0,
+      "altura": 190,
       "sexo": "masculino",
       "quantidade_exercicios": 3
     }

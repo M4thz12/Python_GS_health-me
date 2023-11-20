@@ -154,15 +154,103 @@ while escolha == 2:
             tx_basal = tx_basal*1.725
         elif quantidade_exercicios_usuario == 5:
             tx_basal = tx_basal*1.9
-                
-        print('\nAgora calculamos, qual é o seu gasto calorico diario')
+        print(f'Diariamente você tem um gasto calorico de {tx_basal}')    
+        print('\nAgora, vamos montar a sua dieta')
         print('Qual é o seu objetivo')
         print('Emagrecer(1)')
         print('Ganho de massa(2)')
-        print('manter opeso(3)')        
-            
-            
-
-
-
+        print('manter opeso(3)')       
+        objetivo_usuario = int(input(':'))
+        if objetivo_usuario == 1:
+            calorias_da_dieta = tx_basal - 500
+        if objetivo_usuario == 2:
+            calorias_da_dieta = tx_basal 
+        if objetivo_usuario == 3:
+            calorias_da_dieta = tx_basal + 500
+        print(f'você recebera uma dieta de {calorias_da_dieta} calorias por dia')
+       
+        print(f'\nvocê deve distribuir sua alimentação em 5 refeições')
+        print('1 - café da manhã')
+        print('2 - lanche da manhã') 
+        print('3 - almoço')
+        print('4 - lanche da tarde')
+        print('5 - janta')
         
+        print('\nPodemos também reduzir a quantidade de alimento nas refeições e adicionar outras duas refeições, o pré-treino e o pós-treino')
+        if quantidade_exercicios_usuario != 1:
+            print('No seu caso, como você não pratica exercicio, pode manter apenas as 5 refeições')
+        else:
+            print('\nDevido a sua pratica de exercícios, você vai adicionar o pré-treino e o pós-treino')
+            print('O pré-treino, deve ser composto principalmente por carboidrato, como fonte de energia')
+            print('O pós-treino, deve ser composto principalmente pro proteina para a recuperação muscular')
+
+        print('\nPara calcular o consumo diário nescessário de proteina, fazemos 1.2g x o peso da pessoa')
+        print('Quando já se tem uma quatidade de exercícios razoável, pode ter uma dieta hipercalorica, sendo 1.6 x o seu peso ')
+        print('Porém Fisiculturistas devem ter um consumo maior para sua recuperação muscular, então deve ser de 2.2 x o seu peso')
+        if quantidade_exercicios_usuario == 5:
+            proteina = 2.2*peso_usuario
+            print(f'\nPortanto, o seu consumo de proteina deve ser de {proteina}g diariamente')
+        if quantidade_exercicios_usuario < 5 and quantidade_exercicios_usuario > 2:
+            proteina = 1.6*peso_usuario
+            print(f'\nPortanto, o seu consumo de proteina deve ser de {proteina}g diariamente')
+        if quantidade_exercicios_usuario < 3:
+            proteina = 1.2*peso_usuario
+            print(f'\nPortanto, o seu consumo de proteina deve ser de {proteina}g diariamente')
+        
+        print('\nO Carboidrato equivale a 50% da sua alimentação')
+        print(f'Sendo assim você deve consumir {calorias_da_dieta/2} calorias em carboidratos')
+        
+
+        carboidratos = (calorias_da_dieta/2)/4
+        lipideos = (calorias_da_dieta/2)/9 - proteina
+        print(f'\nsua dieta é composta por:')
+        print(f'{proteina} gramas de proteina')
+        print(f'{carboidratos} gramas de carboidratos')
+        print(f'{lipideos} gramas de lipideos')
+        print(f'\n distribuindo ao longo do dia fica:')
+        if quantidade_exercicios_usuario == 1:
+            print(f'No café da manhã:')
+            print(f'{proteina/4} gramas de proteina\n {carboidratos/4} gramas de carboidratos\n {lipideos/4} gramas de lipideos')
+            print(f'No lanche da manhã:')
+            print(f'{proteina/10} gramas de proteina\n {carboidratos/10} gramas de carboidratos\n {lipideos/10} gramas de lipideos')
+            print(f'No almoço:')
+            print(f'{proteina/3.3} gramas de proteina\n {carboidratos/3.3} gramas de carboidratos\n {lipideos/3.3} gramas de lipideos')
+            print(f'No lanche da tarde:')
+            print(f'{proteina/10} gramas de proteina\n {carboidratos/10} gramas de carboidratos\n {lipideos/10} gramas de lipideos')
+            print(f'Na janta:')
+            print(f'{proteina/4} gramas de proteina\n {carboidratos/4} gramas de carboidratos\n {lipideos/4} gramas de lipideos')
+        else:
+            print(f'No café da manhã:')
+            print(f'{proteina/5} gramas de proteina\n {carboidratos/5} gramas de carboidratos\n {lipideos/5} gramas de lipideos')
+            print(f'No lanche da manhã:')
+            print(f'{proteina/10} gramas de proteina\n {carboidratos/10} gramas de carboidratos\n {lipideos/10} gramas de lipideos')
+            print(f'No almoço:')
+            print(f'{proteina/4} gramas de proteina\n {carboidratos/4} gramas de carboidratos\n {lipideos/4} gramas de lipideos')
+            print(f'No lanche da tarde:')
+            print(f'{proteina/10} gramas de proteina\n {carboidratos/10} gramas de carboidratos\n {lipideos/10} gramas de lipideos')
+            print(f'Na janta:')
+            print(f'{proteina/5} gramas de proteina\n {carboidratos/5} gramas de carboidratos\n {lipideos/5} gramas de lipideos')
+            print(f'No pré-treino:')
+            print(f'{proteina/13.4} gramas de proteina\n {carboidratos/13.4} gramas de carboidratos\n {lipideos/13.4} gramas de lipideos')
+            print(f'No pó-treino:')
+            print(f'{proteina/13.4} gramas de proteina\n {carboidratos/13.4} gramas de carboidratos\n {lipideos/13.4} gramas de lipideos')
+            
+        print(f'Agora vamos calcular o quanto de agua, você de beber')
+        agua = 35 * peso_usuario
+        print(f'Devido ao seu peso, você deve tomar {agua}ml de agua')
+        if quantidade_exercicios_usuario != 1:
+            print(f'Como você pratica exercicios deve se aumentar 500ml, sendo assim {agua + 500}ml')
+        print('em dias quentes deve se adicionar mais 700ml')
+        print('para avisa-lo diariamente se deve ou não aumentar a quantidade de agua nosso aplicatvo se conectou com seu smart watch')
+        import random
+        print('****criando situação hipotetica****')
+        clima = random.randint(5,35)
+        print(f'Hoje a temperatura está em {clima} graus')
+        if clima > 19:
+            print('Como o clima está quente, você deve tomar mais 700ml')
+        else:
+            print('como o clima está mais frio não é preciso tomar mais agua')
+                    
+        print('muito obrigado pelo uso do aplicativo, esperamos ter ajudado a montar a sua dieta')
+        print('atualise os seus dados e monte uma nova para atingir o seu peso ideal')
+        break

@@ -29,6 +29,21 @@
       "nome": "pedro",
       "email": "p@.com",
       "senha": "P1"
+    },
+    {
+      "nome": "alessandra",
+      "email": "ale@.com",
+      "senha": "Ale123"
+    },
+    {
+      "nome": "bia",
+      "email": "anabiabedin@gmail.com",
+      "senha": "Anabeatriz4."
+    },
+    {
+      "nome": "rodrigo",
+      "email": "r@.com",
+      "senha": "R1"
     }
   ]
 }
