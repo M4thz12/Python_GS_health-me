@@ -2,10 +2,10 @@ import json
 import os
 def verifica_email(email):
     if "@" not in email :
-        print('faltou o @')
+        
         return True
     if ".com" not in email:
-        print('faltou .com')
+        
         return True
 
 def verifica_numero(palavra):

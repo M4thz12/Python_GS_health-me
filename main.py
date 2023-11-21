@@ -70,26 +70,42 @@ while escolha == 2:
         print('Vamos fazer o seu cadastro.')
         print('Digite seu nome:')
         nome_usuario = input(':')
-        if  funcoes.verifica_numero(nome_usuario) == True:
+        funcoes.verifica_numero(nome_usuario)
+        while  funcoes.verifica_numero(nome_usuario) == True:
             print('O nome não pode conter numeros')
-            break
+            print('Digite seu nome:')
+            nome_usuario = input(':')
+            funcoes.verifica_numero(nome_usuario)
+
         print('Digite seu email')
         email_usario = input(':')
-        if funcoes.verifica_email(email_usario) == True:
-            break
+        funcoes.verifica_email(email_usario)
+        while funcoes.verifica_email(email_usario) == True:
+            print('O email deve conter um @ e um .com')
+            print('Digite seu email')
+            email_usario = input(':')
+            funcoes.verifica_email(email_usario)
 
 
         print('A senha deve ter pelo menos um numero e uma letra maiuscula')
         print('Digite sua senha')
         senha_usuario = input(':')
         
-        
-        if funcoes.verifica_maiuscula(senha_usuario) == False:
+        funcoes.verifica_maiuscula(senha_usuario)
+        while funcoes.verifica_maiuscula(senha_usuario) == False:
             print('Senha precisa de pelo menos 1 letra maiuscula')
-            break
-        if  funcoes.verifica_numero(senha_usuario) == False:
+            print('A senha deve ter pelo menos um numero e uma letra maiuscula')
+            print('Digite sua senha')
+            senha_usuario = input(':')
+            funcoes.verifica_maiuscula(senha_usuario)
+
+        while  funcoes.verifica_numero(senha_usuario) == False:
             print('A senha precisa ter pelo menos 1 numero')
-            break
+            print('A senha deve ter pelo menos um numero e uma letra maiuscula')
+            print('Digite sua senha')
+            senha_usuario = input(':')
+            funcoes.verifica_maiuscula(senha_usuario)
+
         usuario_dados = {"nome": nome_usuario, "email": email_usario, "senha": senha_usuario}
         funcoes.salvar_em_json(usuario_dados)
     resposta_cadastro = 's'
@@ -105,19 +121,36 @@ while escolha == 2:
         
         print('Digite a sua senha, para logar')
         senha_logar = input(':')
-
-        if funcoes.verifica_usuario(email_logar, senha_logar):
+        funcoes.verifica_usuario(email_logar, senha_logar)
+        while funcoes.verifica_usuario(email_logar, senha_logar):
             print('Login incorreto!')
-            break
+            print('Tente novamente')
+            print('Digite o seu email, para logar')
+            email_logar = input(':')
+            print('Digite a sua senha, para logar')
+            senha_logar = input(':')
+            funcoes.verifica_usuario(email_logar, senha_logar)
         
         print('Agora vamos coletar alguns dados atualizados para montar a sua dieta.')
         print('')
         print('Quantos anos você tem?')
-        idade_usuario = int(input(':'))
+        idade_usuario = input(':')
+        funcoes.verifica_numero(idade_usuario)
+        while funcoes.verifica_numero(idade_usuario) == False:
+            print('Digite um numero')
+            idade_usuario = input(':')
         print('Qual a sua altura? (em cm)')
-        altura_usuario = int(input(':'))
+        altura_usuario = input(':')
+        funcoes.verifica_numero(altura_usuario)
+        while funcoes.verifica_numero(altura_usuario) == False:
+            print('Digite um numero')
+            altura_usuario = input(':')
         print('Qual a seu peso? (em kg)')
-        peso_usuario = float(input(':'))
+        peso_usuario = input(':')
+        funcoes.verifica_numero(peso_usuario)
+        while funcoes.verifica_numero(peso_usuario) == False:
+            print('Digite um numero')
+            peso_usuario = input(':')
         print('Qual o seu sexo biologico? (masculino/feminino)')
         sexo_usuario = input(':').lower()
         while sexo_usuario != 'masculino' and sexo_usuario != 'feminino':
@@ -135,6 +168,10 @@ while escolha == 2:
         
         usuario_dados = {"email":email_logar,"idade": idade_usuario, "peso": peso_usuario, "altura": altura_usuario, "sexo": sexo_usuario, "quantidade_exercicios": quantidade_exercicios_usuario}
         funcoes.adiciona_dados_usuario(usuario_dados)
+        idade_usuario = int(idade_usuario)
+        altura_usuario = int(altura_usuario)
+        peso_usuario = float(peso_usuario)
+        sexo_usuario = sexo_usuario
         
         if sexo_usuario == 'masculino':
             tx_basal = 66 + (13.8*peso_usuario) + (5*altura_usuario) - (6.8*idade_usuario)
