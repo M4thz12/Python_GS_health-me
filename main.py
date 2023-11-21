@@ -121,16 +121,17 @@ while escolha == 2:
         
         print('Digite a sua senha, para logar')
         senha_logar = input(':')
-        funcoes.verifica_usuario(email_logar, senha_logar)
-        while funcoes.verifica_usuario(email_logar, senha_logar):
-            print('Login incorreto!')
-            print('Tente novamente')
-            print('Digite o seu email, para logar')
-            email_logar = input(':')
-            print('Digite a sua senha, para logar')
-            senha_logar = input(':')
-            
-            funcoes.verifica_usuario(email_logar, senha_logar)
+        # funcoes.verifica_usuario(email_logar, senha_logar)
+        if funcoes.verifica_usuario(email_logar, senha_logar) == True:
+            while funcoes.verifica_usuario(email_logar, senha_logar):
+                print('Login incorreto!')
+                print('Tente novamente')
+                print('Digite o seu email, para logar')
+                email_logar = input(':')
+                print('Digite a sua senha, para logar')
+                senha_logar = input(':')
+                
+                funcoes.verifica_usuario(email_logar, senha_logar)
         
         print('Agora vamos coletar alguns dados atualizados para montar a sua dieta.')
         print('')
