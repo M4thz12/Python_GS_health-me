@@ -3,10 +3,10 @@
     {
       "email": "m@.com",
       "idade": "18",
-      "peso": "70",
+      "peso": "75",
       "altura": "185",
       "sexo": "masculino",
-      "quantidade_exercicios": 3
+      "quantidade_exercicios": 4
     }
   ]
 }

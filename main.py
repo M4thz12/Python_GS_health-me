@@ -129,6 +129,7 @@ while escolha == 2:
             email_logar = input(':')
             print('Digite a sua senha, para logar')
             senha_logar = input(':')
+            
             funcoes.verifica_usuario(email_logar, senha_logar)
         
         print('Agora vamos coletar alguns dados atualizados para montar a sua dieta.')
@@ -172,12 +173,12 @@ while escolha == 2:
         altura_usuario = int(altura_usuario)
         peso_usuario = float(peso_usuario)
         sexo_usuario = sexo_usuario
-        
+
         if sexo_usuario == 'masculino':
             tx_basal = 66 + (13.8*peso_usuario) + (5*altura_usuario) - (6.8*idade_usuario)
         if sexo_usuario == 'feminino':
             tx_basal = 655 + (9.6 * peso_usuario) + (1.8*altura_usuario) - (4.7*idade_usuario)
-        print(f'\nCom os dados, calculasmos a sua taxa metabolica basal, e o resultado foi de {tx_basal}')
+        print(f'\nCom os dados, calculamos a sua taxa metabolica basal, e o resultado foi de {round(tx_basal,1)}')
         print('A taxa metabolica basal refere-se à quantidade mínima de energia que o corpo humano necessita em repouso absoluto para manter funções vitais, como a respiração, circulação sanguínea, manutenção da temperatura corporal e funcionamento de órgãos vitais, como o coração, fígado e cérebro. Em outras palavras, é a quantidade de calorias que o corpo queima quando está em completo repouso.')
         print('\nPorém a taxa metabolica basal, deve ser multiplicada pela quantidade de vezes que a pessoa faz exercicio, pois ja aumenta o gasto calorico da pessoa')
         
@@ -191,7 +192,7 @@ while escolha == 2:
             tx_basal = tx_basal*1.725
         elif quantidade_exercicios_usuario == 5:
             tx_basal = tx_basal*1.9
-        print(f'Diariamente você tem um gasto calorico de {tx_basal}')    
+        print(f'Diariamente você tem um gasto calorico de {round(tx_basal,1)}')    
         print('\nAgora, vamos montar a sua dieta')
         print('Qual é o seu objetivo')
         print('Emagrecer(1)')
@@ -204,7 +205,7 @@ while escolha == 2:
             calorias_da_dieta = tx_basal 
         if objetivo_usuario == 3:
             calorias_da_dieta = tx_basal + 500
-        print(f'você recebera uma dieta de {calorias_da_dieta} calorias por dia')
+        print(f'você recebera uma dieta de {round(calorias_da_dieta,1)} calorias por dia')
        
         print(f'\nvocê deve distribuir sua alimentação em 5 refeições')
         print('1 - café da manhã')
