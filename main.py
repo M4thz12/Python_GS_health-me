@@ -177,10 +177,11 @@ while escolha == 2:
         print('5 - janta')
         
         print('\nPodemos também reduzir a quantidade de alimento nas refeições e adicionar outras duas refeições, o pré-treino e o pós-treino')
-        if quantidade_exercicios_usuario != 1:
+        if quantidade_exercicios_usuario == 1:
             print('No seu caso, como você não pratica exercicio, pode manter apenas as 5 refeições')
         else:
             print('\nDevido a sua pratica de exercícios, você vai adicionar o pré-treino e o pós-treino')
+
             print('O pré-treino, deve ser composto principalmente por carboidrato, como fonte de energia')
             print('O pós-treino, deve ser composto principalmente pro proteina para a recuperação muscular')
 
@@ -189,53 +190,53 @@ while escolha == 2:
         print('Porém Fisiculturistas devem ter um consumo maior para sua recuperação muscular, então deve ser de 2.2 x o seu peso')
         if quantidade_exercicios_usuario == 5:
             proteina = 2.2*peso_usuario
-            print(f'\nPortanto, o seu consumo de proteina deve ser de {proteina}g diariamente')
+            print(f'\nPortanto, o seu consumo de proteina deve ser de {round(proteina,1)}g diariamente')
         if quantidade_exercicios_usuario < 5 and quantidade_exercicios_usuario > 2:
             proteina = 1.6*peso_usuario
-            print(f'\nPortanto, o seu consumo de proteina deve ser de {proteina}g diariamente')
+            print(f'\nPortanto, o seu consumo de proteina deve ser de {round(proteina,1)}g diariamente')
         if quantidade_exercicios_usuario < 3:
             proteina = 1.2*peso_usuario
-            print(f'\nPortanto, o seu consumo de proteina deve ser de {proteina}g diariamente')
+            print(f'\nPortanto, o seu consumo de proteina deve ser de {round(proteina,1)}g diariamente')
         
         print('\nO Carboidrato equivale a 50% da sua alimentação')
-        print(f'Sendo assim você deve consumir {calorias_da_dieta/2} calorias em carboidratos')
+        print(f'Sendo assim você deve consumir {round(calorias_da_dieta/2,1)} calorias em carboidratos')
         
 
         carboidratos = (calorias_da_dieta/2)/4
         lipideos = (calorias_da_dieta/2)/9 - proteina
         print(f'\nsua dieta é composta por:')
-        print(f'{proteina} gramas de proteina')
-        print(f'{carboidratos} gramas de carboidratos')
-        print(f'{lipideos} gramas de lipideos')
+        print(f'{round(proteina,1)} gramas de proteina')
+        print(f'{round(carboidratos,1)} gramas de carboidratos')
+        print(f'{round(lipideos,1)} gramas de lipideos')
         print(f'\n distribuindo ao longo do dia fica:')
         if quantidade_exercicios_usuario == 1:
-            print(f'No café da manhã:')
-            print(f'{proteina/4} gramas de proteina\n {carboidratos/4} gramas de carboidratos\n {lipideos/4} gramas de lipideos')
-            print(f'No lanche da manhã:')
-            print(f'{proteina/10} gramas de proteina\n {carboidratos/10} gramas de carboidratos\n {lipideos/10} gramas de lipideos')
-            print(f'No almoço:')
-            print(f'{proteina/3.3} gramas de proteina\n {carboidratos/3.3} gramas de carboidratos\n {lipideos/3.3} gramas de lipideos')
-            print(f'No lanche da tarde:')
-            print(f'{proteina/10} gramas de proteina\n {carboidratos/10} gramas de carboidratos\n {lipideos/10} gramas de lipideos')
-            print(f'Na janta:')
-            print(f'{proteina/4} gramas de proteina\n {carboidratos/4} gramas de carboidratos\n {lipideos/4} gramas de lipideos')
+            print(f'\nNo café da manhã:')
+            print(f'{round(proteina/4, 1)} gramas de proteina\n {round(carboidratos/4,1)} gramas de carboidratos\n {round(lipideos/4,1)} gramas de lipideos')
+            print(f'\nNo lanche da manhã:')
+            print(f'{round(proteina/10,1)} gramas de proteina\n {round(carboidratos/10,1)} gramas de carboidratos\n {round(lipideos/10,1)} gramas de lipideos')
+            print(f'\nNo almoço:')
+            print(f'{round(proteina/3.3, 1)} gramas de proteina\n {round(carboidratos/3.3,1)} gramas de carboidratos\n {round(lipideos/3.3,1)} gramas de lipideos')
+            print(f'\nNo lanche da tarde:')
+            print(f'{round(proteina/10,1)} gramas de proteina\n {round(carboidratos/10,1)} gramas de carboidratos\n {round(lipideos/10,1)} gramas de lipideos')
+            print(f'\nNa janta:')
+            print(f'{round(proteina/4,1)} gramas de proteina\n {round(carboidratos/4,1)} gramas de carboidratos\n {round(lipideos/4,1)} gramas de lipideos')
         else:
-            print(f'No café da manhã:')
-            print(f'{proteina/5} gramas de proteina\n {carboidratos/5} gramas de carboidratos\n {lipideos/5} gramas de lipideos')
-            print(f'No lanche da manhã:')
-            print(f'{proteina/10} gramas de proteina\n {carboidratos/10} gramas de carboidratos\n {lipideos/10} gramas de lipideos')
-            print(f'No almoço:')
-            print(f'{proteina/4} gramas de proteina\n {carboidratos/4} gramas de carboidratos\n {lipideos/4} gramas de lipideos')
-            print(f'No lanche da tarde:')
-            print(f'{proteina/10} gramas de proteina\n {carboidratos/10} gramas de carboidratos\n {lipideos/10} gramas de lipideos')
-            print(f'Na janta:')
-            print(f'{proteina/5} gramas de proteina\n {carboidratos/5} gramas de carboidratos\n {lipideos/5} gramas de lipideos')
-            print(f'No pré-treino:')
-            print(f'{proteina/13.4} gramas de proteina\n {carboidratos/13.4} gramas de carboidratos\n {lipideos/13.4} gramas de lipideos')
-            print(f'No pó-treino:')
-            print(f'{proteina/13.4} gramas de proteina\n {carboidratos/13.4} gramas de carboidratos\n {lipideos/13.4} gramas de lipideos')
+            print(f'\nNo café da manhã:')
+            print(f'{round(proteina/5,1)} gramas de proteina\n {round(carboidratos/5,1)} gramas de carboidratos\n {round(lipideos/5,1)} gramas de lipideos')
+            print(f'\nNo lanche da manhã:')
+            print(f'{round(proteina/10,1)} gramas de proteina\n {round(carboidratos/10,1)} gramas de carboidratos\n {round(lipideos/10,1)} gramas de lipideos')
+            print(f'\nNo almoço:')
+            print(f'{round(proteina/4,1)} gramas de proteina\n {round(carboidratos/4,1)} gramas de carboidratos\n {round(lipideos/4,1)} gramas de lipideos')
+            print(f'\nNo lanche da tarde:')
+            print(f'{round(proteina/10,1)} gramas de proteina\n {round(carboidratos/10,1)} gramas de carboidratos\n {round(lipideos/10,1)} gramas de lipideos')
+            print(f'\nNa janta:')
+            print(f'{round(proteina/5,1)} gramas de proteina\n {round(carboidratos/5,1)} gramas de carboidratos\n {round(lipideos/5,1)} gramas de lipideos')
+            print(f'\nNo pré-treino:')
+            print(f'{round(proteina/13.4,1)} gramas de proteina\n {round(carboidratos/13.4,1)} gramas de carboidratos\n {round(lipideos/13.4,1)} gramas de lipideos')
+            print(f'\nNo pó-treino:')
+            print(f'{round(proteina/13.4,1)} gramas de proteina\n {round(carboidratos/13.4,1)} gramas de carboidratos\n {round(lipideos/13.4,1)} gramas de lipideos')
             
-        print(f'Agora vamos calcular o quanto de agua, você de beber')
+        print(f'\nAgora vamos calcular o quanto de agua, você de beber')
         agua = 35 * peso_usuario
         print(f'Devido ao seu peso, você deve tomar {agua}ml de agua')
         if quantidade_exercicios_usuario != 1:
@@ -251,6 +252,6 @@ while escolha == 2:
         else:
             print('como o clima está mais frio não é preciso tomar mais agua')
                     
-        print('muito obrigado pelo uso do aplicativo, esperamos ter ajudado a montar a sua dieta')
+        print('\nmuito obrigado pelo uso do aplicativo, esperamos ter ajudado a montar a sua dieta')
         print('atualise os seus dados e monte uma nova para atingir o seu peso ideal')
         break
